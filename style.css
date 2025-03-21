@@ -490,18 +490,29 @@ h1 > span {
 }
 
 .projects__item {
-  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1rem; /* Adds space so text isn't cramped */
 }
 
+
 .projects__picture {
-  display: block;
-  margin-block-end: 20px;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Maintains uniform shape */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projects__image {
   width: 100%;
-  height: auto;
+  height: auto; /* Prevents forced cropping */
+  object-fit: contain; /* Ensures the whole image is visible */
 }
+
 
 .projects__name {
   font-size: 1.5rem;
