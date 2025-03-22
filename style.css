@@ -222,6 +222,16 @@ svg {
 
 /*  HERO */
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-80px);
+  }
+}
+
+
 .hero__wrapper {
   padding-bottom: 80px;
 }
@@ -236,6 +246,7 @@ svg {
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  animation: float 3s infinite ease-in-out alternate;
   
 }
 
@@ -247,6 +258,7 @@ svg {
   z-index: -1;
   /* width: 33.125rem; */
   height: auto;
+  animation: float 3s infinite ease-in-out alternate;
 }
 
 .hero__circle {
@@ -254,6 +266,7 @@ svg {
   top: 171px;
   margin-bottom: -129px;
   translate: calc(100vw - 64px - 16px);
+  animation: float 3s infinite ease-in-out alternate;
 }
 
 .hero__text {
@@ -320,6 +333,7 @@ h1 > span {
     right: auto;
     left: 0;
     translate: -50%;
+    animation: float 3s infinite ease-in-out alternate;
   }
 
   .hero__circle {
@@ -329,6 +343,7 @@ h1 > span {
     bottom: 190px;
     translate: 50%;
     z-index: 1;
+    animation: float 3s infinite ease-in-out alternate;
   }
 
   .hero__text {
@@ -379,11 +394,13 @@ h1 > span {
   .hero__rings {
     top: 0px;
     translate: -50% -50%;
+    animation: float 3s infinite ease-in-out alternate;
   }
 
   .hero__circle {
     top: 322px;
     right: 445px;
+    animation: float 3s infinite ease-in-out alternate;
   }
 
   .hero__text {
@@ -647,6 +664,22 @@ h1 > span {
 }
 
 /* CONTACT */
+.hero__contact {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero__contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(255, 105, 180, 0.3);
+}
+
 
 .contact {
   position: relative;
