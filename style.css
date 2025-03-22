@@ -246,7 +246,7 @@ svg {
   height: auto;
   max-width: 100%;
   object-fit: cover;
-  animation: float 3s infinite ease-in-out alternate;
+  animation: float 6s infinite ease-in-out alternate;
   
 }
 
@@ -446,7 +446,18 @@ h1 > span {
   translate: 0 50%;
   max-width: 80%;
   margin: 0 auto;
+  animation: rotateXaxis 5s infinite linear;
 }
+
+@keyframes rotateXaxis {
+  from {
+    transform: rotateX(0deg) translateX(0px);
+  }
+  to {
+    transform: rotateX(360deg) translateX(-80px);
+  }
+}
+
 
 /* For tablets (>= 600px) */
 @media (min-width: 37.5em) {
