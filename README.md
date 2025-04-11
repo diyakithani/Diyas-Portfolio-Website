@@ -4,5 +4,5 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 ## Tech Stack
 <li> Frontend: React, Tailwind CSS, JavaScript </li>
 <li>Backend: N/A (Static Portfolio)</li>
-<li>Deployment: GitHub Pages (or wherever you deploy it)</li>
+<li>Deployment: GitHub Pages</li>
  
