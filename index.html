@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,50 +72,42 @@
       <section class="hero">
         <div class="wrapper hero__wrapper bottom-border">
           <div class="hero__content">
+            <!-- Your Image Section (unchanged) -->
             <picture>
-              <source
-                media="(min-width: 62.5em)"
-                srcset="assets\images\Diyasprofpic(1).jpg"
-              />
-              <source
-                media="(min-width: 37.5em)"
-                srcset="assets\images\Diyasprofpic(1).jpg"/>
-              <img
-                class="hero__image"
-                src="assets\images\Diyasprofpic(1).jpg"
-                alt="picture of Diya Kithani"
-                width="174"
-                height="383"
-              />
+              <source media="(min-width: 62.5em)" srcset="assets/images/Diyasprofeditedpic(1).jpg" />
+              <source media="(min-width: 37.5em)" srcset="assets/images/Diyasprofeditedpic(1).jpg" />
+              <img class="hero__image" src="assets/images/Diyasprofpic(1).jpg" alt="picture of Diya Kithani" width="174" height="383" />
             </picture>
-            <img
-              class="hero__rings"
-              src="/assets/images/pattern-rings.svg"
-              alt=""
-              width="530"
-              height="129"
-            />
-            <img
-              class="hero__circle"
-              src="/assets/images/pattern-circle.svg"
-              alt=""
-              width="120"
-              height="120"
-            />
+            <img class="hero__rings" src="/assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+            <img class="hero__circle" src="/assets/images/pattern-circle.svg" alt="" width="120" height="120" />
+      
+            <!-- Upgraded Text Section -->
             <div class="hero__text">
-              <h1 class="hero__headline header-xl">
-                Nice to<br />
-                meet you! I'm <span>Diya Kithani</span>.
+              <h1 class="hero__headline header-xl fade-on-scroll">
+                Nice to <br />
+                meet you! I'm <span class="highlight">Diya Kithani</span>.
               </h1>
+              
+      
               <p class="hero__description">
-                🌸 Crafting stories with data & magic with code! 🌸
-                I’m a Data Analyst & Full-Stack Developer, blending numbers and pixels to create something beautiful. With certifications 📜 and projects 🎨 in both, I turn raw data into insights and ideas into interactive experiences—because why choose one when you can do both? ✨💡
+                I’m a <strong>CS + Math major</strong> who turns raw data into meaning and code into experiences. Whether it’s a Python pipeline or a React UI — I build with logic, elegance, and a little bit of ✨ drama ✨.
               </p>
-              <a href="#contact" class="hero__contact underline">Contact me</a>
+      
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                  <a href="assets/Resume_Software.pdf" class="hero__contact" style="...">💻 Software Resume</a>
+                  <a href="assets/Resume_Data.pdf" class="hero__contact" style="...">📊 Data/Analytics Resume</a>
+                  <a href="#contact" class="hero__contact underline">💬 Let’s Talk</a>
+                </div>
+                
+              
             </div>
           </div>
         </div>
       </section>
+      
+      
+      
+      
 
       <section class="skills">
         <div class="wrapper skills__wrapper bottom-border"><h2 class="projects__headline header-xl">Skills</h2></div>
@@ -459,4 +453,20 @@
       </div>
     </footer>
   </body>
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-on-scroll');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.3 });
+  
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+  
 </html>

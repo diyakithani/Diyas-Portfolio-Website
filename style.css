@@ -236,19 +236,23 @@ svg {
   padding-bottom: 80px;
 }
 
-.hero__image {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  translate: -50%;
-  height: auto;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-  animation: float 6s infinite ease-in-out alternate;
+
+    .hero__image {
+      
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+      border-radius: 10%;
+
+      width: 100px;
+    margin-top: 1rem;
+    }
+    
   
-}
+  
+  
+
 
 .hero__rings {
   position: absolute;
@@ -819,3 +823,104 @@ footer {
     padding-block: 47px 92px;
   }
 }
+/* ✨ FADE-UP ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎯 Hero Animations */
+.hero__headline {
+  animation: fadeUp 1s ease-out;
+}
+
+.hero__description {
+  animation: fadeUp 1s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+/* 💎 CTA Buttons */
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero__button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--accent);
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color var(--transition);
+}
+
+.hero__button:hover {
+  background-color: #22e38e;
+}
+
+/* 🌈 Highlighted Name */
+.highlight {
+  background-image: linear-gradient(
+    to right,
+    var(--accent) 75%,
+    var(--accent) 75%
+  );
+  background-position: 0 1.1em;
+  background-repeat: repeat-x;
+  background-size: 8px 3px;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero__text {
+    text-align: center;
+    margin-block-start: 2rem;
+  }
+
+  .hero__image {
+    width: 340px;
+    border-radius: 2rem; /* more modern roundness */
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* soft elegant shadow */
+    transition: transform 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.07);
+  /* or use a slight neon-style glow */
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero__image:hover {
+    transform: scale(1.03); /* subtle hover zoom */
+  }
+  
+}
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+.fade-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
